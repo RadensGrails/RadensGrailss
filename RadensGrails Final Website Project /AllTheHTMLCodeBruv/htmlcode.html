@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>RadensGrails</title>
+    <link rel="stylesheet" type="text/css" href="stylesheet/styles.css">
+    <style>
+        h1, h2 {
+            background-color: #97CDCD;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <h1>RadensGrails</h1>
+    <div class="categories">
+        <ul class="category-list">
+            <li class="category-item selected" data-target="#jackets">Jackets</li>
+            <li class="category-item" data-target="#shoes">Shoes</li>
+            <li class="category-item" data-target="#About-Me"><a href="resume.html">About Me</a></li>
+        </ul>
+    </div>
+    <div class="picture-container" style="display: flex; justify-content: center;">
+        <div class="picture" id="jackets">
+            <img src="../images/WranglerRodeo.jpg" style="width: 178%;" alt="WranglerRodeo">
+        </div>
+        <div class="picture" id="jacketss" style="margin-left: 470px;">
+            <img src="../images/VintageButwin.JPG" style="width: 65%;" alt="VintageButwin">
+        </div>
+    </div>
+    <div class="picture-container" style="display: flex; justify-content: center;">
+        <div class="picture" id="shoes" style="margin-left: 150px;">
+            <img src="../images/DesertStompers.jpg" style="width: 160%;" alt="DesertStompers">
+        </div>
+        <div class="picture" id="shoess" style="margin-left: 450px;">
+            <img src="../images/StussyXConverse.JPG" style="width: 75%;" alt="StussyXConverse">
+        </div>
+    </div>
+    <div class="youtube-link">
+        <a href="https://www.youtube.com/watch?v=xJ68DZ5U2B4">When I was a young lad</a>
+    </div>
+    <h2>Sales over the past month</h2>
+    <h3>Tableau Visual For sales 
+ <div class='tableauPlaceholder' id='viz1681893641554' style='position: relative'><noscript><a href='#'>
+    <img alt='Sheet 1 ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Sa&#47;Salesforradensgrails&#47;Sheet1&#47;1_rss.png' 
+    style='border: none' /></a></noscript><object class='tableauViz'  style='display:none;'><param name='host_url' 
+        value='https%3A%2F%2Fpublic.tableau.com%2F' /> <param name='embed_code_version' value='3' /> 
+        <param name='site_root' value='' /><param name='name' value='Salesforradensgrails&#47;Sheet1' />
+        <param name='tabs' value='no' /><param name='toolbar' value='yes' /><param name='static_image' 
+        value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Sa&#47;Salesforradensgrails&#47;Sheet1&#47;1.png' /> 
+        <param name='animate_transition' value='yes' /><param name='display_static_image' value='yes' />
+        <param name='display_spinner' value='yes' /><param name='display_overlay' value='yes' /><param 
+        name='display_count' value='yes' /><param name='language' value='en' /></object></div>
+        <script type='text/javascript'>var divElement = document.getElementById('viz1681893641554');
+        var vizElement = divElement.getElementsByTagName('object')[0];
+        vizElement.style.width='100%';vizElement.style.height=(divElement.offsetWidth*0.25)+'px';
+        var scriptElement = document.createElement('script');
+        scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';
+        vizElement.parentNode.insertBefore(scriptElement, vizElement);                
+        </script>
+    </h3>
+    <script>
+        const categoryItems = document.querySelectorAll('.category-item');
+        categoryItems.forEach(item => {
+            item.addEventListener('click', () => {
+                categoryItems.forEach(i => i.classList.remove('selected'));
+                item.classList.add('selected');
+                const targetId = item.dataset.target;
+                const target = document.querySelector(targetId);
+                target.scrollIntoView({ behavior: 'smooth' });
+            });
+        });
+    </script>
+</body>
+</html>
